@@ -3,33 +3,33 @@
 
 int main(void)
 {
-  int i,j,e,x,temp;
+  int i,j,n,x,temp;
   int array[100];
 
   printf("Total number of elements: \n");
-  scanf("%d",&e);
-  printf("Enter %d elements: \n",e);
-  for(x=0;x<e;x++)
+  scanf("%d",&n);
+  printf("Enter %d elements: \n",n);
+  for(x=0;x<n;x++)
   {
     scanf("%d",&array[x]);
   }
 
   // Bubble Sort
-  for(i=0;i<e;i++)
+  for(i=0;i<n-1;i++)
   {
-    for(j=0;j<e;j++)
+    for(j=0;j<n-i-1;j++)
     {
-      if(array[i]<array[j])
+      if(array[j]>array[j+1])
       {
-        temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
+        temp = array[j];
+        array[j] = array[j+1];
+        array[j+1] = temp;
       }
     }
   }
 
   // Printing array
-  for(x=0;x<e;x++)
+  for(x=0;x<n;x++)
   {
     printf("%d ",array[x]);
   }

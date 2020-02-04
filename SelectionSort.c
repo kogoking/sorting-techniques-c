@@ -3,34 +3,34 @@
 
 int main(void)
 {
-  int i,j,e,x,temp;
+  int i,j,n,x,min,temp;
   int array[100];
 
   printf("Total number of elements: \n");
-  scanf("%d",&e)
-  printf("Enter %d elements: \n",e);
-  for(x=0;x<e;x++)
+  scanf("%d",&n);
+  printf("Enter %d elements: \n",n);
+  for(x=0;x<n;x++)
   {
     scanf("%d",&array[x]);
   }
 
   // Selection Sort
-  for(i=0;i<e;i++) // Use condition i<e-1 instead of i<e for optimization
+  for(i=0;i<n-1;i++)
   {
-    for(j=i+1;j<e;j++)
+    for(j=i+1;j<n;j++)
     {
-      if(array[i]>array[j])
+      if (array[i] > array[j])
       {
         temp = array[i];
         array[i] = array[j];
-        array[j] = temp;
+        array[j] = temp;}
       }
-    }
-  }
+    } 
 
   // Printing array
-  for(x=0;x<e;x++)
+  for(x=0;x<n;x++)
   {
     printf("%d ",array[x]);
   }
 }
+
